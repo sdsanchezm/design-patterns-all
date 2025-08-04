@@ -13,6 +13,7 @@
         - `deno run --allow-net hello.ts` // allow network access
         - `console.log("Hallo welt!");`
         - `deno run hello.ts`
+        - `deno --watch .\01-builder.ts`
     - deno config
         - `touch deno.json`
         ```js
