@@ -12,6 +12,8 @@ function mainLab1(): void {
     // const ferrari = new FerrariFactory();
     const factory2 = new FerrariFactory();
     factory2.orderCar();
+    // factory2.manufactureCar();
+    
 
 };
 

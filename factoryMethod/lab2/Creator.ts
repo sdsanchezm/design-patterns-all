@@ -1,6 +1,6 @@
 abstract class Creator {
 
-    abstract factoryMethod(): Product;
+    protected abstract factoryMethod(): Product;
 
     someOperation(): string {
         const product = this.factoryMethod();
