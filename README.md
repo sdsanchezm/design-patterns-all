@@ -11,6 +11,7 @@
     - check and run script
         - `deno --version`
         - `deno run --allow-net hello.ts` // allow network access
+        - `deno run --unstable-sloppy-imports main.ts` // multiple files
         - `console.log("Hallo welt!");`
         - `deno run hello.ts`
         - `deno --watch .\01-builder.ts`
@@ -43,6 +44,17 @@
                 "@std/assert": "jsr:@std/assert@1"
             }
         }
+        ```
+    - Example Server
+        ```js
+        import { serve } from "https://deno.land/std/http/server.ts";
+
+        const server = serve({ port: 8000 });
+        console.log("http://localhost:8000/");
+        for await (const req of server) {
+        req.respond({ body: "Hello World\n" });
+        }
+
         ```
 - vscode Extensions:
   - [https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens]
