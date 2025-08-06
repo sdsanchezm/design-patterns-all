@@ -1,5 +1,3 @@
-interface Product {
-
+export interface Product {
     operation(): string;
-
 }

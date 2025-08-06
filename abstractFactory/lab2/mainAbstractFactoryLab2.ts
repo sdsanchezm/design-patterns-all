@@ -55,7 +55,7 @@ class HealthyRestaurantFactory implements RestaurantFactory {
   }
 }
 
-function main(factory: RestaurantFactory) {
+function mainAbstractFactoryLab2(factory: RestaurantFactory) {
   const sushi = factory.createSushi();
   const drink = factory.createDrink();
 
@@ -64,8 +64,8 @@ function main(factory: RestaurantFactory) {
 }
 
 console.log('regular menu order:\n');
-main(new FastFoodRestaurantFactory());
+mainAbstractFactoryLab2(new FastFoodRestaurantFactory());
 
 console.log('\n\nhealthy menu order:');
-main(new HealthyRestaurantFactory());
+mainAbstractFactoryLab2(new HealthyRestaurantFactory());
 
