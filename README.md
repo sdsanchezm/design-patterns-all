@@ -97,6 +97,18 @@
   - object creation is more clear
   - solid aligned
 
+## Structural Patterns
+
+
+## Behavioural Patterns
+
+### Strategy
+
+- El patrón Strategy es un patrón de diseño de software que define una familia de algoritmos, los encapsula y los hace intercambiables.
+- Es útil cuando se tiene una clase que tiene un comportamiento que puede cambiar en tiempo de ejecución y se quiere delegar la responsabilidad de la implementación a otra clase.
+- https://refactoring.guru/es/design-patterns/strategy
+
+
 ## Docs
 
 - [https://refactoring.guru/es/design-patterns/catalog]
