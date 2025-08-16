@@ -7,30 +7,35 @@ interface IPaymentStrategy {
     pay(): void;
 }
 
+// Strategy 1 - Visa
 class payWithVisaCard implements IPaymentStrategy {
     pay(): void {
-        console.log("%cPaying with Visa card...", COLORS.orange);        
+        console.log("%cPaying with Visa card...", COLORS.orange);
     }
 }
 
+// Strategy 2 - MasterCard
 class payWithMasterCard implements IPaymentStrategy {
     pay(): void {
         console.log("%cPaying with Master card...", COLORS.pink);
     }
 }
 
+// Strategy 3 - Master
 class payWithDebitCard implements IPaymentStrategy {
     pay(): void {
-        console.log("%cPaying with Debit card...", COLORS.green);        
+        console.log("%cPaying with Debit card...", COLORS.green);
     }
 }
 
+// Strategy 4 - Cash
 class payWithCash implements IPaymentStrategy {
     pay(): void {
         console.log("%cPaying with Cash...", COLORS.blue);
     }
 }
 
+// Strategy Consumer
 class Payment {
     private paymentMethodName: string;
     private payStrategy: IPaymentStrategy;
@@ -49,10 +54,9 @@ class Payment {
         console.log("Strategy updated ");
         this.payStrategy = newStrategy;
     }
-
 }
 
-export class StrategyPattern {
+export class StrategyPatternLab1 {
 
     private colors?: typeof COLORS;
 
@@ -61,7 +65,7 @@ export class StrategyPattern {
     constructor(colors: typeof COLORS);
 
     constructor(colors?: typeof COLORS) {
-        console.log('%cStrategy pattern!', COLORS.blue);
+        console.log('%cStrategy pattern - lab 1 ===', COLORS.violet);
         if (colors){
             this.colors = colors;
         }
