@@ -47,7 +47,7 @@ class FastFoodRestaurantFactory implements RestaurantFactory {
 
 class HealthyRestaurantFactory implements RestaurantFactory {
   createSushi(): Sushi {
-    return new ChickenPasta();
+    return new ChickenSushi();
   }
 
   createDrink(): Drink {
