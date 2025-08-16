@@ -14,6 +14,7 @@
         - `deno run --unstable-sloppy-imports main.ts` // multiple files
         - `console.log("Hallo welt!");`
         - `deno run hello.ts`
+        - `deno run --allow-read src/main.ts`
         - `deno --watch .\01-builder.ts`
     - deno config
         - `touch deno.json`
@@ -56,6 +57,18 @@
         }
 
         ```
+    - Import Maps: (file: deno.json)
+        ```js
+        {
+            "imports": {
+                "@lib/": "./lib/",
+                "@utils/": "./src/utils/"
+            }
+        }
+        ```
+        - to use it: `import { MyClass } from "@lib/my-class.ts";`
+        - to call it: `deno run --allow-read --import-map=deno.json src/main.ts`
+
 - vscode Extensions:
   - [https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens]
   - [https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno]
