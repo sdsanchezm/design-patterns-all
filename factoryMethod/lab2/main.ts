@@ -1,3 +1,7 @@
+import { Creator } from "./Creator";
+import { ConcreteCreatorA } from "./CreatorProductA";
+import { ConcreteCreatorB } from "./CreatorProductB";
+
 function mainLab2(): void {
 
     const creatorA = new ConcreteCreatorA();

@@ -1,4 +1,7 @@
-abstract class Creator {
+import { Product } from "./Product";
+import { ConcreteProductB } from "./ProductB";
+
+export abstract class Creator {
 
     protected abstract factoryMethod(): Product;
 
