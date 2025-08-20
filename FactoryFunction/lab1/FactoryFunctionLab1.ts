@@ -3,7 +3,7 @@ import { COLORS } from "../../COLORS";
 interface KeyValuePair <K, V> {
 };
 
-export class FactoryFucntionLab1 {
+export class FactoryFunctionLab1 {
 
     private colors?: typeof COLORS;
     // signatures

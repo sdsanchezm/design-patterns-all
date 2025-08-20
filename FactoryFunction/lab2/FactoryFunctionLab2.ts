@@ -4,7 +4,7 @@ interface KeyValuePair<K, V> { };
 
 type Language = 'de' | 'en' | 'fr';
 
-export class FactoryFucntionLab2 {
+export class FactoryFunctionLab2 {
     private colors?: typeof COLORS;
     // signatures
     constructor();
