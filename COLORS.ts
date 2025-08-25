@@ -1,5 +1,3 @@
-
-
 export const COLORS = {
     brown: 'color: brown',
     red: 'color: red',

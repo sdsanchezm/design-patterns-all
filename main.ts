@@ -21,8 +21,6 @@ function main() {
     // Singleton
     // SingletonLab1.exec();
     SingletonLab2.exec();
-
-
 }
 
 main();
