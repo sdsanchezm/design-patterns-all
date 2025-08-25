@@ -1,27 +1,27 @@
-interface Sushi {
+interface Pasta {
   prepare(): void;
 }
 
-class ChickenPasta implements Sushi {
+class ChickenPasta implements Pasta {
   prepare(): void {
     console.log('Preparing chicken pasta');
   }
 }
 
-class BeefPasta implements Sushi {
+class BeefPasta implements Pasta {
   prepare(): void {
     console.log('Preparing beef pasta');
   }
 }
 
-class AlfredoPasta implements Sushi {
+class AlfredoPasta implements Pasta {
   prepare(): void {
     console.log('Preparing Alfredo pasta');
   }
 }
 
 abstract class Restaurant {
-  protected abstract createPasta(): Sushi;
+  protected abstract createPasta(): Pasta;
 
   orderPasta(): void {
     const pasta = this.createPasta();
@@ -30,19 +30,19 @@ abstract class Restaurant {
 }
 
 class ChickenPastaRestaurant extends Restaurant {
-  override createPasta(): Sushi {
+  override createPasta(): Pasta {
     return new ChickenPasta();
   }
 }
 
 class BeefPastaRestaurant extends Restaurant {
-  override createPasta(): Sushi {
+  override createPasta(): Pasta {
     return new BeefPasta();
   }
 }
 
 class AlfredoPastaRestaurant extends Restaurant {
-  override createPasta(): Sushi {
+  override createPasta(): Pasta {
     return new AlfredoPasta();
   }
 }

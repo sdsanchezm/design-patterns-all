@@ -1,4 +1,5 @@
 // import * as ConfigurationManager from './ConfigurationManager.ts';
+// import {configManager } from "./ConfigurationManager";
 import {configManager as ConfigurationManager } from "./ConfigurationManager";
 
 export class SingletonLab2 {

@@ -1,4 +1,4 @@
-import { COLORS } from "../../COLORS";
+import { COLORS } from "../../../../COLORS";
 
 interface KeyValuePair <K, V> {
 };
