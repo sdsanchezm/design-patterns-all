@@ -1,3 +1,4 @@
+import { templateMethodPatternLab1 } from "./Behavioral/templateMethodPattern/templateMethodPatternLab1.ts";
 import { COLORS } from "./COLORS.ts";
 import { FactoryFunctionLab1 } from "./Creationals/FactoryFunction/lab1/FactoryFunctionLab1.ts";
 import { FactoryFunctionLab2 } from "./Creationals/FactoryFunction/lab2/FactoryFunctionLab2.ts";
@@ -20,7 +21,11 @@ function main() {
 
     // Singleton
     // SingletonLab1.exec();
-    SingletonLab2.exec();
+    // SingletonLab2.exec();
+
+    // templateMethodPattern
+    templateMethodPatternLab1.exec();
+
 }
 
 main();
