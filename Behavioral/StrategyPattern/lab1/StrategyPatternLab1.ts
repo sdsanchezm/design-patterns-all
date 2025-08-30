@@ -1,4 +1,4 @@
-import { COLORS } from "../../COLORS";
+import { COLORS } from "../../../COLORS";
 
 // can't have multiple constructor implementations in a class
 // Instead, need to use constructor overloading with a single implementation that handles all cases

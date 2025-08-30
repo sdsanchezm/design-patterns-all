@@ -1,10 +1,13 @@
+//  * * Es útil cuando se tiene un algoritmo que sigue una secuencia de pasos
+//  * * y se quiere permitir a las subclases que redefinan algunos de esos pasos.
+
 abstract class PizzaPreparationTemplate {
     prepare(): void {
         this.doughtReady();
         this.saucing();
         this.cheesing();
-        this.hamming();
         this.baking();
+        this.hamming();
     }
 
     private doughtReady() {
