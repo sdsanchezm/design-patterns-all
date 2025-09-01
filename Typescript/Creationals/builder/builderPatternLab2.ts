@@ -1,4 +1,6 @@
-class QueryBuilder {
+import { COLORS } from "../../COLORS";
+
+export class QueryBuilder {
     
     private table: string;
     private fields: string[] = [];
@@ -47,9 +49,8 @@ class QueryBuilder {
         const query = `select ${this.fields} from ${this.table} where ${whereClause} order by ${orderClause} ${limitClause}`;
         return query;
     }
-}
 
-function main() {
+    exec() {
     const usersQuery = new QueryBuilder('users')
         .select('id', 'name', 'email')
         .where('age > 18')
@@ -62,27 +63,10 @@ function main() {
     // Example:
     // Select id, name, email from users where age > 18 and country = 'Cri' order by name ASC limit 10;
     console.log('%c Query:\n', COLORS.violet);
-    console.log(usersQuery);
+    console.log(`%c ${usersQuery}`, COLORS.blue);
+    }
 }
 
-main();
-
-export const sleep = (ms: number) => {
+export const sleepTime = (ms: number) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
-};
-
-export const COLORS = {
-    blue: 'color: blue',
-    brown: 'color: brown',
-    black: 'color: black',
-    cyan: 'color: cyan',
-    gray: 'color: gray',
-    green: 'color: green',
-    orange: 'color: orange',
-    pink: 'color: pink',
-    purple: 'color: purple',
-    red: 'color: red',
-    violet: 'color: violet',
-    white: 'color: white',
-    yellow: 'color: yellow',
 };

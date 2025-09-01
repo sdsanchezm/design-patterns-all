@@ -11,6 +11,7 @@ import { StrategyPatternLab2 } from "./Behavioral/StrategyPattern/lab2/StrategyP
 import { templateMethodPatternLab1 } from "./Behavioral/templateMethodPattern/templateMethodPatternLab1.ts";
 import { templateMethodPatternLab2 } from "./Behavioral/templateMethodPattern/templateMethodPatternLab2.ts";
 import { RaspberryPiBuilder } from "./Creationals/builder/lab1/builderPatternLab1.ts";
+import { QueryBuilder } from "./Creationals/builder/builderPatternLab2.ts";
 
 function main() {
 
@@ -32,7 +33,8 @@ function main() {
     // templateMethodPatternLab2.exec();
 
     // Builder Pattern
-    new RaspberryPiBuilder().exec();
+    // new RaspberryPiBuilder().exec();
+    new QueryBuilder('users').exec();
 
 }
 
