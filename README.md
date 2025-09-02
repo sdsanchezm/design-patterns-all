@@ -2,6 +2,42 @@
 
 - About: design patterns practice repo
 
+## General Overview
+
+~~~mermaid
+kanban
+    section 1-Creacionales
+      01-builder
+      02-factory-methof
+      03-abstract-factor
+      04-prototype
+      05-inmutabilidad
+      06-singleton
+      07-factory-function
+
+    section 2-Estructurales
+      01-adapter
+      02-bridge
+      02.3-bridge
+      03-composite
+      04-decorator
+      05-facade
+      06-flyweight
+      07-proxy
+
+    section 3-Comportamiento
+      01-chain-responsibility
+      02-command
+      03-iterator
+      04-mediator
+      05-memento
+      06-observer
+      07-state
+      08-strategy
+      09-template-method
+      10-visitor
+~~~
+
 ## Utils
 
 - deno: [https://deno.com/]
@@ -99,7 +135,6 @@
 
 ## Structural Patterns
 
-
 ## Behavioural Patterns
 
 ### Strategy
@@ -107,6 +142,7 @@
 - El patrón Strategy es un patrón de diseño de software que define una familia de algoritmos, los encapsula y los hace intercambiables.
 - Es útil cuando se tiene una clase que tiene un comportamiento que puede cambiar en tiempo de ejecución y se quiere delegar la responsabilidad de la implementación a otra clase.
 - https://refactoring.guru/es/design-patterns/strategy
+
 
 
 ## Docs
