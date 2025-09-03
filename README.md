@@ -8,7 +8,7 @@
 kanban
     section 1-Creacionales
       01-builder
-      02-factory-methof
+      02-factory-method
       03-abstract-factor
       04-prototype
       05-inmutabilidad

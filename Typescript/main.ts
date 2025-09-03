@@ -12,6 +12,7 @@ import { templateMethodPatternLab1 } from "./Behavioral/templateMethodPattern/te
 import { templateMethodPatternLab2 } from "./Behavioral/templateMethodPattern/templateMethodPatternLab2.ts";
 import { RaspberryPiBuilder } from "./Creationals/builder/lab1/builderPatternLab1.ts";
 import { QueryBuilder } from "./Creationals/builder/Lab2/builderPatternLab2.ts";
+import { VisitorPatternLab1 } from "./Behavioral/VisitorPattern/Lab1/VisitorPatternLab1.ts";
 
 
 function main() {
@@ -35,7 +36,10 @@ function main() {
 
     // Builder Pattern
     // new RaspberryPiBuilder().exec();
-    new QueryBuilder('users').exec();
+    // new QueryBuilder('users').exec();
+
+    // Visitor Pattern
+    new VisitorPatternLab1().exec();
 
 }
 
