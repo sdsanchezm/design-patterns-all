@@ -47,31 +47,29 @@ class AlfredoPastaRestaurant extends Restaurant {
   }
 }
 
-function mainLab3() {
-  let restaurant: Restaurant;
+export class FactoryMethodPatternLab3 {
+  exec() {
+    let restaurant: Restaurant;
 
-  const pastaType = prompt(
-    'What pasta would you like? ( chicken/beef/alfredo )'
-  );
+    const pastaType = prompt('What pasta would you like? ( chicken/beef/alfredo )');
 
-  switch (pastaType) {
-    case 'chicken':
-      restaurant = new ChickenPastaRestaurant();
-      break;
+    switch (pastaType) {
+      case 'chicken':
+        restaurant = new ChickenPastaRestaurant();
+        break;
 
-    case 'beef':
-      restaurant = new BeefPastaRestaurant();
-      break;
+      case 'beef':
+        restaurant = new BeefPastaRestaurant();
+        break;
 
-    case 'alfredo':
-      restaurant = new AlfredoPastaRestaurant();
-      break;
+      case 'alfredo':
+        restaurant = new AlfredoPastaRestaurant();
+        break;
 
-    default:
-      throw new Error('invalida option');
+      default:
+        throw new Error('invalida option');
+    }
+
+    restaurant.orderPasta();
   }
-
-  restaurant.orderPasta();
 }
-
-mainLab3();

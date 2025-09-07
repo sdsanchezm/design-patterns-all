@@ -7,13 +7,13 @@
 ~~~mermaid
 kanban
     section 1-Creacionales
-      01-builder
-      02-factory-method
+      01-builder🟦
+      02-factory-method🟦
       03-abstract-factor
       04-prototype
       05-inmutabilidad
-      06-singleton
-      07-factory-function
+      06-singleton 🟦🟪
+      07-factory-function🟦
 
     section 2-Estructurales
       01-adapter
@@ -33,8 +33,8 @@ kanban
       05-memento
       06-observer
       07-state
-      08-strategy
-      09-template-method
+      08-strategy 🟦
+      09-template-method🟦
       10-visitor
 ~~~
 
