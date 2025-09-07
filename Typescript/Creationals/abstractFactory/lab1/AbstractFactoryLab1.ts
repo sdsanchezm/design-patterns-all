@@ -55,21 +55,21 @@ class MacOSFactory implements GUIFactory {
     }
 }
 
-function clientCodeAbstractFactoryLab2(factory: GUIFactory) {
-    const button = factory.createButton();
-    const checkbox = factory.createCheckbox();
+export class AbstractFactoryLab1 {
 
-    button.render();
-    checkbox.render();
+    Factory(factory: GUIFactory) {
+        const button = factory.createButton();
+        const checkbox = factory.createCheckbox();
+
+        button.render();
+        checkbox.render();
+    }
+
+    exec() {
+        const windowsFactory = new WindowsFactory();
+        this.Factory(windowsFactory);
+
+        const macOSFactory = new MacOSFactory();
+        this.Factory(macOSFactory);
+    }
 }
-
-function mainAbstractFactoryLab1() {
-    const windowsFactory = new WindowsFactory();
-    clientCodeAbstractFactoryLab2(windowsFactory);
-
-    const macOSFactory = new MacOSFactory();
-    clientCodeAbstractFactoryLab2(macOSFactory);
-}
-
-// run with: deno run --unstable-sloppy-imports mainAbstractFactoryLab1.ts
-mainAbstractFactoryLab1();

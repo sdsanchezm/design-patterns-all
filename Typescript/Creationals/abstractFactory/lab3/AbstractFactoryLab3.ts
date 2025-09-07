@@ -62,17 +62,22 @@ class GasVehicleFactory implements VehicleFactory {
 
 // 5. Código Cliente
 
-function mainAbstractFactoryLab3(factory: VehicleFactory) {
-  const vehicle = factory.createVehicle();
-  const engine = factory.createEngine();
+export class AbstractFactoryLab3 {
 
-  vehicle.assemble();
-  engine.start();
+  Factory(factory: VehicleFactory) {
+    const vehicle = factory.createVehicle();
+    const engine = factory.createEngine();
+
+    vehicle.assemble();
+    engine.start();
+  }
+
+  exec() {
+    // Pruebas
+    console.log('Creando vehículo eléctrico:');
+    this.Factory(new ElectricVehicleFactory());
+
+    console.log('\nCreando vehículo de combustión:');
+    this.Factory(new GasVehicleFactory());
+  }
 }
-
-// Pruebas
-console.log('Creando vehículo eléctrico:');
-mainAbstractFactoryLab3(new ElectricVehicleFactory());
-
-console.log('\nCreando vehículo de combustión:');
-mainAbstractFactoryLab3(new GasVehicleFactory());

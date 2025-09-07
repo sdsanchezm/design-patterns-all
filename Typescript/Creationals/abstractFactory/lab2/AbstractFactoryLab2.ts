@@ -1,3 +1,5 @@
+import { COLORS } from "../../../COLORS";
+
 interface Sushi {
   prepare(): void;
 }
@@ -8,25 +10,25 @@ interface Drink {
 
 class ChickenSushi implements Sushi {
   prepare(): void {
-    console.log('Preparing %cSushi of Chicken');
+    console.log('Preparing %cSushi of Chicken', COLORS.blue);
   }
 }
 
 class BeefSushi implements Sushi {
   prepare(): void {
-    console.log('Preparing sushi of %cRes');
+    console.log('Preparing sushi of %cBeef', COLORS.blue);
   }
 }
 
 class Water implements Drink {
   pour(): void {
-    console.log('Pouring a glass of %water');
+    console.log('Pouring a glass of %cwater', COLORS.blue);
   }
 }
 
 class PopDrink implements Drink {
   pour(): void {
-    console.log('Pouring a glass of %pop');
+    console.log('Pouring a glass of %cpop', COLORS.blue);
   }
 }
 
@@ -55,17 +57,21 @@ class HealthyRestaurantFactory implements RestaurantFactory {
   }
 }
 
-function mainAbstractFactoryLab2(factory: RestaurantFactory) {
-  const sushi = factory.createSushi();
-  const drink = factory.createDrink();
+export class AbstractFactoryLab2 {
 
-  sushi.prepare();
-  drink.pour();
+  Factory(factory: RestaurantFactory) {
+    const sushi = factory.createSushi();
+    const drink = factory.createDrink();
+
+    sushi.prepare();
+    drink.pour();
+  }
+
+  exec() {
+    console.log('regular menu order:\n');
+    this.Factory(new FastFoodRestaurantFactory());
+
+    console.log('\n\nhealthy menu order:');
+    this.Factory(new HealthyRestaurantFactory());
+  }
 }
-
-console.log('regular menu order:\n');
-mainAbstractFactoryLab2(new FastFoodRestaurantFactory());
-
-console.log('\n\nhealthy menu order:');
-mainAbstractFactoryLab2(new HealthyRestaurantFactory());
-
