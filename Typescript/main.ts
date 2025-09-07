@@ -19,6 +19,7 @@ import { SingletonLab2 } from "./Creationals/Singleton/Lab2/SingletonLab2.ts";
 import { AbstractFactoryLab1 } from "./Creationals/abstractFactory/lab1/AbstractFactoryLab1.ts";
 import { AbstractFactoryLab2 } from "./Creationals/abstractFactory/lab2/AbstractFactoryLab2.ts";
 import { AbstractFactoryLab3 } from "./Creationals/abstractFactory/lab3/AbstractFactoryLab3.ts";
+import { PrototypePatternLab1 } from "./Creationals/PrototypePattern/Lab1/PrototypePatternLab1.ts";
 
 class Program {
 
@@ -63,6 +64,9 @@ class Program {
         // new AbstractFactoryLab1().exec();
         // new AbstractFactoryLab2().exec();
         // new AbstractFactoryLab3().exec();
+
+        // Prototype Pattern
+        new PrototypePatternLab1().exec();
     }
 
 }

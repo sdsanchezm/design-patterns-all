@@ -10,7 +10,7 @@ kanban
       01-builder🟦
       02-factory-method🟦
       03-abstract-factory🟦
-      04-prototype
+      04-prototype🟦
       05-inmutabilidad
       06-singleton 🟦🟪
       07-factory-function🟦
