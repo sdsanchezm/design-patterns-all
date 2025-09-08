@@ -1,6 +1,8 @@
 //  * * Es útil cuando necesitas añadir nuevas operaciones a
 //  * * clases estables sin cambiar su código.
 
+import { COLORS } from "../../../COLORS";
+
 interface Visitor {
     visitWarehouse(warehouse: Warehouse): void;
     visitOffice(office: Office): void;
@@ -53,16 +55,16 @@ class AdminWorker implements Visitor {
         console.log(`Admin worker in Warehouse, price: $${warehouse.getPoints() * 0.2}`);
     }
     visitOffice(office: Office): void {
-        console.log(`Admin worker in office, price: $${office.getPoints() * 0.9}`);
+        console.log(`Admin worker in office, price: $${office.getPoints() * 1.2}`);
     }
     visitApartment(apartment: Apartment): void {
-        console.log(`Admin worker in apartment, price: $${apartment.getPoints() * 0.7}`);
+        console.log(`Admin worker in apartment, price: $${apartment.getPoints() * 0.5}`);
     }
 }
 
 class LogisticWorker implements Visitor {
     visitWarehouse(warehouse: Warehouse): void {
-        console.log(`Logistic worker in Warehouse, price: $${warehouse.getPoints() * 0.9}`);
+        console.log(`Logistic worker in Warehouse, price: $${warehouse.getPoints() * 1.1}`);
     }
     visitOffice(office: Office): void {
         console.log(`Logistic worker in office, price: $${office.getPoints() * 0.3}`);
@@ -97,9 +99,17 @@ export class VisitorPatternLab1 {
         console.log(`Warehouse: ${new Warehouse().getPoints()}`);
         console.log(`Office: ${new Office().getPoints()}`);
         console.log("\n==\n");
-
         
+        console.log("%cAll Prices for Admin ==", COLORS.blue);
+        const adminW = new AdminWorker();
+        buildings.forEach(building => building.accept(adminW))
         
+        const logisticW = new LogisticWorker();
+        buildings.forEach(building => building.accept(logisticW))
         
+        const maidWorker = new MaidWorker();
+        buildings.forEach(building => building.accept(maidWorker))
+        
+        console.log("\n==\n");
     }
 }

@@ -39,7 +39,7 @@ class Program {
         // templateMethodPatternLab2.exec();
 
         // Visitor Pattern
-        // new VisitorPatternLab1().exec();
+        new VisitorPatternLab1().exec();
 
 
         // Creational Patterns ===================
@@ -72,7 +72,7 @@ class Program {
 
         // Immutability
         // new ImmutabilityPatternLab1().exec();
-        new ImmutabilityPatternLab2().exec();
+        // new ImmutabilityPatternLab2().exec();
     }
 
 }
