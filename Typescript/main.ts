@@ -13,13 +13,15 @@ import { RaspberryPiBuilder } from "./Creationals/builder/lab1/builderPatternLab
 import { QueryBuilder } from "./Creationals/builder/Lab2/builderPatternLab2.ts";
 import { FactoryMethodPatternLab1 } from "./Creationals/factoryMethod/lab1/FactoryMethodPatternLab1.ts";
 import { FactoryMethodPatternLab2 } from "./Creationals/factoryMethod/lab2/FactoryMethodPatternLab2.ts";
-import { FactoryMethodPatternLab3 } from "./Creationals/factoryMethod/lab3/factory-method.ts";
+import { FactoryMethodPatternLab3 } from "./Creationals/factoryMethod/lab3/FactoryMethodPatternLab3.ts";
 import { SingletonLab1 } from "./Creationals/Singleton/Lab1/SingletonLab1.ts";
 import { SingletonLab2 } from "./Creationals/Singleton/Lab2/SingletonLab2.ts";
 import { AbstractFactoryLab1 } from "./Creationals/abstractFactory/lab1/AbstractFactoryLab1.ts";
 import { AbstractFactoryLab2 } from "./Creationals/abstractFactory/lab2/AbstractFactoryLab2.ts";
 import { AbstractFactoryLab3 } from "./Creationals/abstractFactory/lab3/AbstractFactoryLab3.ts";
 import { PrototypePatternLab1 } from "./Creationals/PrototypePattern/Lab1/PrototypePatternLab1.ts";
+import { ImmutabilityPatternLab1 } from "./Creationals/ImmutabilityPattern/Lab1/ImmutabilityPatternLab1.ts";
+import { ImmutabilityPatternLab2 } from "./Creationals/ImmutabilityPattern/Lab2/ImmutabilityPatternLab2.ts";
 
 class Program {
 
@@ -66,7 +68,11 @@ class Program {
         // new AbstractFactoryLab3().exec();
 
         // Prototype Pattern
-        new PrototypePatternLab1().exec();
+        // new PrototypePatternLab1().exec();
+
+        // Immutability
+        new ImmutabilityPatternLab1().exec();
+        // new ImmutabilityPatternLab2().exec();
     }
 
 }
