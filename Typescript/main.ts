@@ -71,8 +71,8 @@ class Program {
         // new PrototypePatternLab1().exec();
 
         // Immutability
-        new ImmutabilityPatternLab1().exec();
-        // new ImmutabilityPatternLab2().exec();
+        // new ImmutabilityPatternLab1().exec();
+        new ImmutabilityPatternLab2().exec();
     }
 
 }
