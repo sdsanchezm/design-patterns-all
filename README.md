@@ -35,7 +35,7 @@ kanban
       07-state
       08-strategy 🟦
       09-template-method🟦
-      10-visitor
+      10-visitor🟦
 ~~~
 
 ## Utils
