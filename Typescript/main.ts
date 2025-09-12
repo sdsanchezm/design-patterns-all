@@ -5,6 +5,7 @@ import { StrategyPatternLab1 } from "./Behavioral/StrategyPattern/lab1/StrategyP
 import { StrategyPatternLab2 } from "./Behavioral/StrategyPattern/lab2/StrategyPatternLab2.ts";
 import { templateMethodPatternLab1 } from "./Behavioral/templateMethodPattern/templateMethodPatternLab1.ts";
 import { templateMethodPatternLab2 } from "./Behavioral/templateMethodPattern/templateMethodPatternLab2.ts";
+import { StatePatternLab1 } from "./Behavioral/StatePattern/Lab1/StatePatternLab1.ts";
 
 import { FactoryFunctionLab1 } from "./Creationals/FactoryFunction/lab1/FactoryFunctionLab1.ts";
 import { FactoryFunctionLab2 } from "./Creationals/FactoryFunction/lab2/FactoryFunctionLab2.ts";
@@ -39,7 +40,10 @@ class Program {
         // templateMethodPatternLab2.exec();
 
         // Visitor Pattern
-        new VisitorPatternLab1().exec();
+        // new VisitorPatternLab1().exec();
+
+        // State Pattern
+        new StatePatternLab1().exec();
 
 
         // Creational Patterns ===================
