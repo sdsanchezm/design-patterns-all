@@ -1,7 +1,7 @@
 import { COLORS } from "../../../COLORS"
 
 export const sleepTime = (ms: number) => {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+    return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
 interface State {
@@ -18,11 +18,11 @@ class Vehicle {
         this.state = new StoppingVehicle(this);
     }
 
-    moving() {
+    movingVehicle() {
         this.state.move();
     }
 
-    stopping() {
+    stoppingVehicle() {
         this.state.stop();
     }
 
@@ -38,7 +38,7 @@ class Vehicle {
 
 // States
 class MovingVehicle implements State {
-    name: string;
+    public name: string = "MovingVehicle";
     private vehicle: Vehicle;
 
     constructor(vehicle: Vehicle) {
@@ -49,12 +49,13 @@ class MovingVehicle implements State {
         console.log("vehicle moving...");
     }
     stop(): void {
-        console.log("vehicle is moving, can't stop now...");
+        console.log("vehicle is moving, stopping now...");
+        this.vehicle.setState(new StoppingVehicle(this.vehicle));
     }
 }
 
 class StoppingVehicle implements State {
-    name: string;
+    public name: string = "StoppingVehicle";
     private vehicle: Vehicle;
 
     constructor(vehicle: Vehicle) {
@@ -62,7 +63,8 @@ class StoppingVehicle implements State {
     }
 
     move(): void {
-        console.log("vehicle is stopped, can't move right now...");
+        console.log("Vehicle started moving...");
+        this.vehicle.setState(new MovingVehicle(this.vehicle));
     }
     stop(): void {
         console.log("vehicle stopped");
@@ -79,7 +81,8 @@ export class StatePatternLab1 {
 
         do {
             console.clear();
-            console.log(`Pick an option: %c${vehicle.getStateName()}`, COLORS.blue);
+            console.log(`Pick an option:`);
+            console.log(`Actual State: %c${vehicle.getStateName()}`, COLORS.blue);
 
             selectedOption = prompt(
                 `
@@ -92,10 +95,10 @@ export class StatePatternLab1 {
 
             switch (selectedOption) {
                 case '1':
-                    vehicle.stopping();
+                    vehicle.stoppingVehicle();
                     break;
                 case '2':
-                    vehicle.moving();
+                    vehicle.movingVehicle();
                     break;
                 case '3':
                     console.log('Exiting...');
@@ -104,7 +107,7 @@ export class StatePatternLab1 {
                     console.log('Invalid option');
             }
 
-            await sleepTime(2000);
+            await sleepTime(1000);
         } while (selectedOption !== '3');
     }
 }
