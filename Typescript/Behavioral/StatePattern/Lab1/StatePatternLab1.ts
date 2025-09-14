@@ -1,4 +1,4 @@
-import { COLORS } from "../../../COLORS"
+import { COLORS } from "../../../Utils/COLORS"
 
 export const sleepTime = (ms: number) => {
     return new Promise((resolve) => setTimeout(resolve, ms));

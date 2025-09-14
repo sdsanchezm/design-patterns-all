@@ -1,4 +1,4 @@
-import { COLORS } from "../../../COLORS.ts";
+import { COLORS } from "../../../Utils/COLORS.ts";
 
 type LogLevel = 'info' | 'warning' | 'error';
 

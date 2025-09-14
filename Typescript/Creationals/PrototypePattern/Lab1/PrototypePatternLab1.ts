@@ -1,4 +1,4 @@
-import { COLORS } from "../../../COLORS";
+import { COLORS } from "../../../Utils/COLORS";
 
 //  * * Es útil cuando queremos duplicar el contenido, 
 //  * * el título y el autor de un documento, por ejemplo o cualquier objeto complejo.

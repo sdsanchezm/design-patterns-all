@@ -1,7 +1,7 @@
 //  * * Es útil cuando necesitas añadir nuevas operaciones a
 //  * * clases estables sin cambiar su código.
 
-import { COLORS } from "../../../COLORS";
+import { COLORS } from "../../../Utils/COLORS";
 
 interface Visitor {
     visitWarehouse(warehouse: Warehouse): void;

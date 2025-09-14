@@ -1,4 +1,4 @@
-import { COLORS } from "../../../COLORS";
+import { COLORS } from "../../../Utils/COLORS";
 
 // STATE Management
 // *  * Es útil para mantener un historial de estados en aplicaciones interactivas.

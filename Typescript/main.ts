@@ -1,4 +1,4 @@
-import { COLORS } from "./COLORS.ts";
+import { COLORS } from "./Utils/COLORS.ts";
 
 import { VisitorPatternLab1 } from "./Behavioral/VisitorPattern/Lab1/VisitorPatternLab1.ts";
 import { StrategyPatternLab1 } from "./Behavioral/StrategyPattern/lab1/StrategyPatternLab1.ts";
