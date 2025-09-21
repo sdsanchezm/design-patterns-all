@@ -56,7 +56,11 @@ class SuperWarrior extends Hero {
         console.log(`warrior attacking with ${this.power.powerName}`);
         this.power.usePower();
     }
-
+    
+    multiAttack(attack: IPower[]) {
+        console.log(`warrior multi-attacking started:`);
+        attack.forEach((attack) => attack.usePower())
+    }
 }
 
 export class BridgePatternLab2 {
@@ -70,5 +74,16 @@ export class BridgePatternLab2 {
         warrior1.attack();
         warrior1.setPower(new RayAttack());
         warrior1.attack();
+
+        const carevaca = new SuperWarrior(new FireblastAttack());
+
+        const listOfAttacks = [
+            new FireblastAttack(),
+            new RayAttack(),
+            new RayAttack(),
+            new SnowballAttack(),
+        ];
+
+        carevaca.multiAttack(listOfAttacks);
     }
 }

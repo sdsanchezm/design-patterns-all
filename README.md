@@ -17,8 +17,7 @@ kanban
 
     section 2-Estructurales
       01-adapter
-      02-bridge
-      02.3-bridge
+      02-bridge🟦
       03-composite
       04-decorator
       05-facade
