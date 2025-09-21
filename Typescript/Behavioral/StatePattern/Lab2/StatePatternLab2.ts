@@ -14,13 +14,18 @@ class Closed implements IState {
     private door: AutomaticDoor;
     public name: string;
 
+    constructor(door: AutomaticDoor) {
+        this.door = door;
+        this.name = "Closed";
+    }
+
     open(): void {
         console.log('oppening the door...');
         this.door.setState(new Opening(this.door));
     }
 
     close(): void {
-        console.log('door is closed already');
+        console.log('door is already closed');
     }
 }
 
@@ -30,15 +35,17 @@ class Opening implements IState {
     private door: AutomaticDoor;
 
     constructor(door: AutomaticDoor) {
-        //TODO: asignar door y name = Abriendo
+        this.door = door;
+        this.name = "Oppening";
+
         this.afterOpen();
     }
 
     private async afterOpen() {
-        await sleepTime(3000);
+        await sleepTime(2000);
 
-        console.log('La puerta se ha abierto.');
-        // TODO: Implementar lógica para abrir la puerta (Open)
+        console.log('door has opened.');
+        this.door.setState(new Open(this.door));
     }
 
     open(): void {
@@ -56,7 +63,8 @@ class Open implements IState {
     public name: string;
 
     constructor(door: AutomaticDoor) {
-        this.name = 'Abierta';
+        this.door = door;
+        this.name = 'Oppened';
     }
 
     open(): void {
@@ -65,27 +73,36 @@ class Open implements IState {
 
     close(): void {
         console.log('closing the door');
-        // TODO: Implementar lógica para cerrar la puerta (Closing)
+        this.door.setState(new Closing(this.door));
     }
 }
 
 // State 4 - Closing
 class Closing implements IState {
+    private door: AutomaticDoor;
     public name: string;
 
     constructor(door: AutomaticDoor) {
         this.door = door;
         this.name = 'Closing';
+
+        this.afterClosed();
+    }
+
+    private async afterClosed() {
+        await sleepTime(2000);
+        console.log("door has been closed");
+        this.door.setState(new Closed(this.door));
     }
 
     open(): void {
-        console.log('detecting movement, oppening the door again');
-        //TODO: Implementar lógica para abrir la puerta (Opening)
+        console.log('cancelling closing, oppening the door again');
+        this.door.setState(new Opening(this.door));
     }
 
     close(): void {
         console.log('door is closing');
-        // TODO: Implementar lógica para cerrar la puerta (Closed)
+        this.door.setState(new Closed(this.door));
     }
 }
 
@@ -94,12 +111,12 @@ class AutomaticDoor {
     private state: IState;
 
     constructor() {
-        this.state = new Closed();
+        this.state = new Closed(this);
     }
 
     setState(state: IState): void {
         this.state = state;
-        console.log(`%cState changed to: ${state.name}`, COLORS.green);
+        console.log(`%cState changed to: %c${state.name}`, COLORS.orange, COLORS.blue);
     }
 
     open(): void {
@@ -115,7 +132,7 @@ class AutomaticDoor {
     }
 }
 
-class StatePatternLab2 {
+export class StatePatternLab2 {
     async exec() {
 
         const door = new AutomaticDoor();
@@ -124,13 +141,13 @@ class StatePatternLab2 {
 
         do {
             console.clear();
-            console.log(`actual state: ${door.getStateName()}`);
+            console.log(`Actual state: %c${door.getStateName()}`, COLORS.orange);
             selectedOption = prompt(`
       1. open door
-      2. close dorr
+      2. close door
       3. exit
 
-      pick an option:": 
+      pick an option: 
     `);
 
             switch (selectedOption) {
@@ -141,14 +158,14 @@ class StatePatternLab2 {
                     door.close();
                     break;
                 case '3':
-                    console.log('exisintg...');
+                    console.log('exiting...');
                     break;
                 default:
                     console.log('invalid option.');
                     break;
             }
 
-            await sleepTime(2000);
+            await sleepTime(1000);
         } while (selectedOption !== '3');
     }
 }
