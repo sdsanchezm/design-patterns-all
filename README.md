@@ -31,10 +31,14 @@ kanban
       04-mediator
       05-memento
       06-observer
-      07-state
+      07-state 🟦
       08-strategy 🟦
       09-template-method🟦
       10-visitor🟦
+
+    section 4-Others
+      01-Register
+      02-Context
 ~~~
 
 ## Utils

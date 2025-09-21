@@ -1,24 +1,105 @@
 import { COLORS } from "../../../Utils/COLORS";
+import { sleepTime } from "../Lab1/StatePatternLab1";
 
-// Interfaz State
-interface State {
+// State Interface
+interface IState {
     name: string;
 
     open(): void;
     close(): void;
 }
+// States Implementation from Interface
+// State 1 - Closed
+class Closed implements IState {
+    private door: AutomaticDoor;
+    public name: string;
+
+    open(): void {
+        console.log('oppening the door...');
+        this.door.setState(new Opening(this.door));
+    }
+
+    close(): void {
+        console.log('door is closed already');
+    }
+}
+
+// State 2 - Oppening
+class Opening implements IState {
+    public name: string;
+    private door: AutomaticDoor;
+
+    constructor(door: AutomaticDoor) {
+        //TODO: asignar door y name = Abriendo
+        this.afterOpen();
+    }
+
+    private async afterOpen() {
+        await sleepTime(3000);
+
+        console.log('La puerta se ha abierto.');
+        // TODO: Implementar lógica para abrir la puerta (Open)
+    }
+
+    open(): void {
+        console.log('door is oppening already');
+    }
+
+    close(): void {
+        console.log('door cant be closed while its oppening');
+    }
+}
+
+// State 3 - Open
+class Open implements IState {
+    private door: AutomaticDoor;
+    public name: string;
+
+    constructor(door: AutomaticDoor) {
+        this.name = 'Abierta';
+    }
+
+    open(): void {
+        console.log('door is openned already');
+    }
+
+    close(): void {
+        console.log('closing the door');
+        // TODO: Implementar lógica para cerrar la puerta (Closing)
+    }
+}
+
+// State 4 - Closing
+class Closing implements IState {
+    public name: string;
+
+    constructor(door: AutomaticDoor) {
+        this.door = door;
+        this.name = 'Closing';
+    }
+
+    open(): void {
+        console.log('detecting movement, oppening the door again');
+        //TODO: Implementar lógica para abrir la puerta (Opening)
+    }
+
+    close(): void {
+        console.log('door is closing');
+        // TODO: Implementar lógica para cerrar la puerta (Closed)
+    }
+}
 
 // Clase Context - AutomaticDoor
 class AutomaticDoor {
-    private state: State;
+    private state: IState;
 
     constructor() {
-        this.state = new Closed(this);
+        this.state = new Closed();
     }
 
-    setState(state: State): void {
+    setState(state: IState): void {
         this.state = state;
-        console.log(`%cEstado cambiado a: ${state.name}`, COLORS.green);
+        console.log(`%cState changed to: ${state.name}`, COLORS.green);
     }
 
     open(): void {
@@ -34,120 +115,40 @@ class AutomaticDoor {
     }
 }
 
-// Estado 1 - Cerrada
-class Closed implements State {
-    private door: AutomaticDoor;
-    public name: string;
+class StatePatternLab2 {
+    async exec() {
 
-    open(): void {
-        console.log('Abriendo la puerta...');
-        // TODO: Implementar lógica para colocar el estado en abriendo la puerta (Opening)
-    }
+        const door = new AutomaticDoor();
 
-    close(): void {
-        console.log('La puerta ya está cerrada.');
-    }
-}
+        let selectedOption: string | null = '3';
 
-// Estado 2 - Abriéndose
-class Opening implements State {
-    public name: string;
-    private door: AutomaticDoor;
+        do {
+            console.clear();
+            console.log(`actual state: ${door.getStateName()}`);
+            selectedOption = prompt(`
+      1. open door
+      2. close dorr
+      3. exit
 
-    constructor(door: AutomaticDoor) {
-        //TODO: asignar door y name = Abriendo
-        this.afterOpen();
-    }
-
-    private async afterOpen() {
-        await sleep(3000);
-
-        console.log('La puerta se ha abierto.');
-        // TODO: Implementar lógica para abrir la puerta (Open)
-    }
-
-    open(): void {
-        console.log('La puerta ya se está abriendo.');
-    }
-
-    close(): void {
-        console.log('La puerta no puede cerrarse mientras se abre.');
-    }
-}
-
-// Estado 3 - Abierta
-class Open implements State {
-    private door: AutomaticDoor;
-    public name: string;
-
-    constructor(door: AutomaticDoor) {
-        this.name = 'Abierta';
-    }
-
-    open(): void {
-        console.log('La puerta ya está abierta.');
-    }
-
-    close(): void {
-        console.log('Cerrando la puerta...');
-        // TODO: Implementar lógica para cerrar la puerta (Closing)
-    }
-}
-
-// Estado 4 - Cerrándose
-class Closing implements State {
-    public name: string;
-
-    constructor(door: AutomaticDoor) {
-        this.door = door;
-        this.name = 'Cerrándose';
-    }
-
-    open(): void {
-        console.log('Detectando movimiento. Abriendo la puerta nuevamente...');
-        //TODO: Implementar lógica para abrir la puerta (Opening)
-    }
-
-    close(): void {
-        console.log('La puerta se ha cerrado.');
-        // TODO: Implementar lógica para cerrar la puerta (Closed)
-    }
-}
-
-// Código Cliente para probar el patrón State
-async function main() {
-    const door = new AutomaticDoor();
-
-    let selectedOption: string | null = '3';
-
-    do {
-        console.clear();
-        console.log(`Estado actual: ${door.getStateName()}`);
-        selectedOption = prompt(`
-      1. Abrir puerta
-      2. Cerrar puerta
-      3. Salir
-
-      Selecciona una opción: 
+      pick an option:": 
     `);
 
-        switch (selectedOption) {
-            case '1':
-                door.open();
-                break;
-            case '2':
-                door.close();
-                break;
-            case '3':
-                console.log('Saliendo del simulador...');
-                break;
-            default:
-                console.log('Opción no válida.');
-                break;
-        }
+            switch (selectedOption) {
+                case '1':
+                    door.open();
+                    break;
+                case '2':
+                    door.close();
+                    break;
+                case '3':
+                    console.log('exisintg...');
+                    break;
+                default:
+                    console.log('invalid option.');
+                    break;
+            }
 
-        await sleep(2000);
-    } while (selectedOption !== '3');
+            await sleepTime(2000);
+        } while (selectedOption !== '3');
+    }
 }
-
-main();

@@ -6,6 +6,7 @@ import { StrategyPatternLab2 } from "./Behavioral/StrategyPattern/lab2/StrategyP
 import { templateMethodPatternLab1 } from "./Behavioral/templateMethodPattern/templateMethodPatternLab1.ts";
 import { templateMethodPatternLab2 } from "./Behavioral/templateMethodPattern/templateMethodPatternLab2.ts";
 import { StatePatternLab1 } from "./Behavioral/StatePattern/Lab1/StatePatternLab1.ts";
+import { StatePatternLab2 } from "./Behavioral/StatePattern/Lab2/StatePatternLab2.ts";
 
 import { FactoryFunctionLab1 } from "./Creationals/FactoryFunction/lab1/FactoryFunctionLab1.ts";
 import { FactoryFunctionLab2 } from "./Creationals/FactoryFunction/lab2/FactoryFunctionLab2.ts";
@@ -23,15 +24,16 @@ import { AbstractFactoryLab3 } from "./Creationals/abstractFactory/lab3/Abstract
 import { PrototypePatternLab1 } from "./Creationals/PrototypePattern/Lab1/PrototypePatternLab1.ts";
 import { ImmutabilityPatternLab1 } from "./Creationals/ImmutabilityPattern/Lab1/ImmutabilityPatternLab1.ts";
 import { ImmutabilityPatternLab2 } from "./Creationals/ImmutabilityPattern/Lab2/ImmutabilityPatternLab2.ts";
-import { BridgePatternLab1 } from "./BridgePatternLab1.ts";
-import { BridgePatternLab2 } from "./BridgePatternLab2.ts";
+
+import { BridgePatternLab1 } from "./Structural/BridgePatternLab1.ts";
+import { BridgePatternLab2 } from "./Structural/BridgePatternLab2.ts";
 
 class Program {
 
     public static main() {
         // Structural Patterns ===================
         // new BridgePatternLab1().exec();
-        new BridgePatternLab2().exec();
+        // new BridgePatternLab2().exec();
 
         // Behavioural Patterns ===================
 
@@ -48,6 +50,7 @@ class Program {
 
         // State Pattern
         // new StatePatternLab1().exec();
+        new StatePatternLab2().exec();
 
 
         // Creational Patterns ===================
