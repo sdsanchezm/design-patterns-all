@@ -23,11 +23,15 @@ import { AbstractFactoryLab3 } from "./Creationals/abstractFactory/lab3/Abstract
 import { PrototypePatternLab1 } from "./Creationals/PrototypePattern/Lab1/PrototypePatternLab1.ts";
 import { ImmutabilityPatternLab1 } from "./Creationals/ImmutabilityPattern/Lab1/ImmutabilityPatternLab1.ts";
 import { ImmutabilityPatternLab2 } from "./Creationals/ImmutabilityPattern/Lab2/ImmutabilityPatternLab2.ts";
+import { BridgePatternLab1 } from "./BridgePatternLab1.ts";
+import { BridgePatternLab2 } from "./BridgePatternLab2.ts";
 
 class Program {
 
     public static main() {
         // Structural Patterns ===================
+        // new BridgePatternLab1().exec();
+        new BridgePatternLab2().exec();
 
         // Behavioural Patterns ===================
 
@@ -43,7 +47,7 @@ class Program {
         // new VisitorPatternLab1().exec();
 
         // State Pattern
-        new StatePatternLab1().exec();
+        // new StatePatternLab1().exec();
 
 
         // Creational Patterns ===================
@@ -77,6 +81,7 @@ class Program {
         // Immutability
         // new ImmutabilityPatternLab1().exec();
         // new ImmutabilityPatternLab2().exec();
+        
     }
 
 }
