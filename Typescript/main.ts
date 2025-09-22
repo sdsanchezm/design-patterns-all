@@ -25,8 +25,8 @@ import { PrototypePatternLab1 } from "./Creationals/PrototypePattern/Lab1/Protot
 import { ImmutabilityPatternLab1 } from "./Creationals/ImmutabilityPattern/Lab1/ImmutabilityPatternLab1.ts";
 import { ImmutabilityPatternLab2 } from "./Creationals/ImmutabilityPattern/Lab2/ImmutabilityPatternLab2.ts";
 
-import { BridgePatternLab1 } from "./Structural/BridgePatternLab1.ts";
-import { BridgePatternLab2 } from "./Structural/BridgePatternLab2.ts";
+import { BridgePatternLab1 } from "./Structural/BridgePattern/BridgePatternLab1.ts";
+import { BridgePatternLab2 } from "./Structural/BridgePattern/BridgePatternLab2.ts";
 
 class Program {
 
@@ -51,7 +51,6 @@ class Program {
         // State Pattern
         // new StatePatternLab1().exec();
         new StatePatternLab2().exec();
-
 
         // Creational Patterns ===================
 
