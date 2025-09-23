@@ -22,7 +22,7 @@ kanban
       04-decorator
       05-facade
       06-flyweight
-      07-proxy
+      07-proxy🟦
 
     section 3-Comportamiento
       01-chain-responsibility
@@ -37,7 +37,7 @@ kanban
       10-visitor🟦
 
     section 4-Others
-      01-Register
+      01-Register🟪
       02-Context
 ~~~
 
