@@ -42,19 +42,20 @@ class SecretDocument implements IDocument {
 class ProxyDocumentLocal implements IDocument {
 
     private secretDocument: IDocument;
+    private userRolesAllowed: string[] = ['admin'];
 
     constructor(document: IDocument) {
         this.secretDocument = document;
     }
 
     displayContent(user: User): void {
-        if (user.getRole() === 'admin'){
+        if (this.userRolesAllowed.includes(user.getRole())){
+            console.log(`${user.getName()} - ${user.getRole()}:`);
             this.secretDocument.displayContent(user);
             return;
         }
 
-        console.log(`no access for regular users - ${user.getName()}`);
-        
+        console.log(`no access for regular users - ${user.getName()} - ${user.getRole}`);
     }
     
 }
