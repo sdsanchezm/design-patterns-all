@@ -1,4 +1,7 @@
 // proxy pattern lab 1
+//  * * Es útil cuando necesitamos controlar el acceso a un objeto,
+//  * * por ejemplo, para verificar si el cliente tiene permiso
+//  * * para acceder a ciertos métodos o propiedades.
 
 import { COLORS } from "../../../Utils/COLORS";
 

@@ -28,6 +28,7 @@ import { ImmutabilityPatternLab2 } from "./Creationals/ImmutabilityPattern/Lab2/
 import { BridgePatternLab1 } from "./Structural/BridgePattern/BridgePatternLab1.ts";
 import { BridgePatternLab2 } from "./Structural/BridgePattern/BridgePatternLab2.ts";
 import { ProxyPatternLab1 } from "./Structural/ProxyPattern/Lab1/ProxyPatternLab1.ts";
+import { ProxyPatternLab2 } from "./Structural/ProxyPattern/Labs2/ProxyPatternLab2.ts";
 
 class Program {
 
@@ -35,7 +36,8 @@ class Program {
         // Structural Patterns ===================
         // new BridgePatternLab1().exec();
         // new BridgePatternLab2().exec();
-        new ProxyPatternLab1().exec();
+        // new ProxyPatternLab1().exec();
+        new ProxyPatternLab2().exec();
 
         // Behavioural Patterns ===================
 
