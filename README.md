@@ -30,7 +30,7 @@ kanban
       03-iterator
       04-mediator
       05-memento
-      06-observer
+      06-observer🟦
       07-state 🟦
       08-strategy 🟦
       09-template-method🟦
