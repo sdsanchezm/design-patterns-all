@@ -47,6 +47,9 @@ kanban
     - install
         - `curl -fsSL https://deno.land/x/install/install.sh | sh`
         - `iwr https://deno.land/x/install/install.ps1 -useb | iex`
+    - update
+        - `deno upgrade`
+        - `deno upgrade --version 1.x.x` // pin a version
     - check and run script
         - `deno --version`
         - `deno run --allow-net hello.ts` // allow network access
